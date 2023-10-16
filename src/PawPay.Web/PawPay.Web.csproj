@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+    
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
@@ -9,4 +10,10 @@
       <ProjectReference Include="..\PawPay.Application\PawPay.Application.csproj" />
       <ProjectReference Include="..\PawPay.Infrastructure\PawPay.Infrastructure.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.12" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+    
 </Project>
