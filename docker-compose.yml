@@ -1,0 +1,27 @@
+networks:
+  backend:
+    driver: bridge
+
+services:
+  web:
+    build: ./
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - redis
+    environment:
+      ConnectionStrings__Redis: "redis:6379"
+    networks:
+      - backend
+
+  redis:
+    image: redis:7.0.13-alpine3.18
+    restart: always
+    volumes:
+      - "pawpay-data:/data"
+    networks:
+      - backend
+
+volumes:
+  pawpay-data:
