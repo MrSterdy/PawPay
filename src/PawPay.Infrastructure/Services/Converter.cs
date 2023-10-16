@@ -42,7 +42,12 @@ public class Converter : IConverter
         {
             response = await _api.GetValute();
 
-            await _cache.SetAsync(CacheKey, JsonSerializer.SerializeToUtf8Bytes(response), cancellationToken);
+            var expiration = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(1)
+            };
+
+            await _cache.SetAsync(CacheKey, JsonSerializer.SerializeToUtf8Bytes(response), expiration, cancellationToken);
         }
 
         var rawValute = response!.Valute[name];
