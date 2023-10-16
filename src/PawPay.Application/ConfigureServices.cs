@@ -16,7 +16,10 @@ public static class ConfigureServices
             .AddRefitClient<IBankApi>()
             .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://www.cbr-xml-daily.ru/"));
 
+        services.AddAutoMapper(Assembly.GetCallingAssembly());
+
         services.AddMediatR(c => c.RegisterServicesFromAssembly(Assembly.GetCallingAssembly()));
+
         services.AddValidatorsFromAssembly(Assembly.GetCallingAssembly());
     }
 }
