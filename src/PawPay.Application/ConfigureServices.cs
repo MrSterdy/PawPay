@@ -1,3 +1,5 @@
+using System.Reflection;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 using PawPay.Application.Api;
@@ -13,5 +15,8 @@ public static class ConfigureServices
         services
             .AddRefitClient<IBankApi>()
             .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://www.cbr-xml-daily.ru/"));
+
+        services.AddMediatR(c => c.RegisterServicesFromAssembly(Assembly.GetCallingAssembly()));
+        services.AddValidatorsFromAssembly(Assembly.GetCallingAssembly());
     }
 }
