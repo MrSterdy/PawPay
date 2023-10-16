@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawPay.Web", "src\PawPay.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawPay.Domain", "src\PawPay.Domain\PawPay.Domain.csproj", "{52DE150C-3B34-4E57-B83C-63517033EF95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawPay.Application", "src\PawPay.Application\PawPay.Application.csproj", "{C34D1C83-EF9C-41B8-BF20-579D0196EAB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{52DE150C-3B34-4E57-B83C-63517033EF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DE150C-3B34-4E57-B83C-63517033EF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DE150C-3B34-4E57-B83C-63517033EF95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34D1C83-EF9C-41B8-BF20-579D0196EAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34D1C83-EF9C-41B8-BF20-579D0196EAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34D1C83-EF9C-41B8-BF20-579D0196EAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34D1C83-EF9C-41B8-BF20-579D0196EAB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
