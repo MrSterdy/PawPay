@@ -4,4 +4,9 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\PawPay.Application\PawPay.Application.csproj" />
+      <ProjectReference Include="..\PawPay.Infrastructure\PawPay.Infrastructure.csproj" />
+    </ItemGroup>
 </Project>
