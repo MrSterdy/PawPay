@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using PawPay.Application.Services;
@@ -7,8 +8,13 @@ namespace PawPay.Infrastructure;
 
 public static class ConfigureServices
 {
-    public static void AddInfrastructureServices(this IServiceCollection services)
+    public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IConverter, Converter>();
+
+        services.AddStackExchangeRedisCache(o =>
+        {
+            o.Configuration = configuration.GetConnectionString("Redis");
+        });
     }
 }
