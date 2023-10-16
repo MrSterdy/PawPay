@@ -60,13 +60,13 @@ public class Converter : IConverter
     {
         var valute = await GetValute("USD", cancellationToken);
 
-        return (valute.Value * rubles, valute);
+        return (rubles / valute.Value, valute);
     }
 
     public async Task<(float Result, Valute Valute)> ConvertDollarsToRubles(float dollars, CancellationToken cancellationToken = default)
     {
         var valute = await GetValute("USD", cancellationToken);
 
-        return (dollars / valute.Value, valute);
+        return (dollars * valute.Value, valute);
     }
 }
