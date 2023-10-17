@@ -17,8 +17,6 @@ builder.Services.AddWebServices();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
-
 app.UseExceptionHandler(c => c.Run(async context =>
 {
     object? response;
